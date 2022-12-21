@@ -20,8 +20,21 @@ median(sat$SAT_Math_Avg_Score)
 mean(sat$SAT_Math_Avg_Score)
 var(sat$SAT_Math_Avg_Score)
 sd(sat$SAT_Math_Avg_Score)
+#The z-value for 95% confidence interval. 
+zvalue <-- qnorm(.025)
+sqrtn <- sqrt(422)
+# 95% confidence interval for SAT_Critical_Reading_Avg_Score
+mean1 <- 400.8503563
+sd1 <- 56.80278272 
+mean1 - (sd1/sqrtn)*zvalue
+mean1 + (sd1/sqrtn)*zvalue
 
-#The 95% confidence interval for the mean. I didn't know how to do this tbh I just did on paper. 
+# 95% confidence interval for SAT_Math_Avg_Score.
+mean2 <- 413.368171 
+sd2 <- 64.68465509 
+mean2 - (sd2/sqrtn)*zvalue
+mean2 + (sd2/sqrtn)*zvalue
+
 
 #This is the scatter plot for the pair of quantitative data which are 
 plot(SAT_Critical_Reading_Avg_Score ~ SAT_Math_Avg_Score, data = sat,
@@ -45,3 +58,4 @@ plot(SAT_Critical_Reading_Avg_Score ~ SAT_Math_Avg_Score, data = sat,
      col  = "dodgerblue")
 abline(stop_dist_model, lwd = 3, col = "darkorange")
 names(stop_dist_model)
+
